@@ -80,7 +80,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        Bañadir.setIcon(new javax.swing.ImageIcon("C:\\Users\\Clase\\Desktop\\Imagenes de interes\\añadir.png")); // NOI18N
+        Bañadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/añadirD.png"))); // NOI18N
         Bañadir.setBorder(null);
         Bañadir.setBorderPainted(false);
         Bañadir.setContentAreaFilled(false);
@@ -90,7 +90,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        Bborrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Clase\\Desktop\\Imagenes de interes\\borrar.png")); // NOI18N
+        Bborrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/borrar.png"))); // NOI18N
         Bborrar.setBorder(null);
         Bborrar.setBorderPainted(false);
         Bborrar.setContentAreaFilled(false);
@@ -104,13 +104,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        Bbuscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Clase\\Desktop\\Imagenes de interes\\buscar.png")); // NOI18N
+        Bbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/buscar.png"))); // NOI18N
         Bbuscar.setBorder(null);
         Bbuscar.setBorderPainted(false);
         Bbuscar.setContentAreaFilled(false);
         Bbuscar.setFocusPainted(false);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("E:\\Logo.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -163,11 +163,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BborrarActionPerformed
-        System.out.println("2");
+        Borrar vBorrar=new Borrar();
     }//GEN-LAST:event_BborrarActionPerformed
 
     private void BañadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BañadirActionPerformed
-        System.out.println("1");
+        Añadir vAñadir=new Añadir();
     }//GEN-LAST:event_BañadirActionPerformed
 
     /**
