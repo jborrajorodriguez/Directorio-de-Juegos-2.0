@@ -25,8 +25,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         tab=(DefaultTableModel) jTable1.getModel();
         FuncionesGrafica.rellenarTabla(tab);
-        FuncionesBase.selectAllPlataforma();
-        FuncionesBase.selectAllJuego();
     }
 
     /**
