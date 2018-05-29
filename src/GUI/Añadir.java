@@ -207,14 +207,16 @@ public class Añadir extends javax.swing.JFrame {
         String plataforma=jComboBox1.getItemAt(jComboBox1.getSelectedIndex());
         int cod=0;
         for(int i=0; i<Plataforma.plataformas.size(); i++){
-           if(plataforma==Plataforma.plataformas.get(i).getNombre()){
+           if(plataforma.equalsIgnoreCase(Plataforma.plataformas.get(i).getNombre())){
                cod=Plataforma.plataformas.get(i).getCodP();
                System.out.println(cod);
-           } 
+           }else{
+               cod=cod;
+           }
         }
         boolean terminado=jCheckBoxAcabado.isSelected();
         
-        FuncionesBase.insertJuego(1, cod, 
+        FuncionesBase.insertJuego(5, cod, 
                 Tnombre.getText(),
                 jCTipo.getItemAt(jCTipo.getSelectedIndex()),
                 Integer.parseInt(jTextFieldNumeroDeJugadores.getText()),
