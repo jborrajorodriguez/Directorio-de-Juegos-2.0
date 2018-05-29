@@ -1,33 +1,36 @@
 package directoriodejuegos2.pkg0;
 
+import java.util.ArrayList;
+
 /**
  * @author {Juan Borrajo Rodriguez}
  */
 public class Plataforma {
 
-    private String codP;
+    private int codp;
     private String nombre;
     private String modelo;
     private String marca;
     private String descripcion;
+    public static ArrayList<Plataforma> plataformas=new ArrayList();
 
     public Plataforma() {
     }
 
-    public Plataforma(String codP, String nombre, String modelo, String marca, String descripcion) {
-        this.codP = codP;
+    public Plataforma(int codp, String nombre, String modelo, String marca, String descripcion) {
+        this.codp = codp;
         this.nombre = nombre;
         this.modelo = modelo;
         this.marca = marca;
         this.descripcion = descripcion;
     }
 
-    public String getCodP() {
-        return codP;
+    public int getCodP() {
+        return codp;
     }
 
-    public void setCodP(String codP) {
-        this.codP = codP;
+    public void setCodP(int codp) {
+        this.codp = codp;
     }
 
     public String getNombre() {
@@ -64,7 +67,7 @@ public class Plataforma {
 
     @Override
     public String toString() {
-        return "Plataforma{" + "codP=" + codP + ", nombre=" + nombre + ", modelo=" + modelo + ", marca=" + marca + ", descripcion=" + descripcion + '}';
+        return "Plataforma{" + "codP=" + codp + ", nombre=" + nombre + ", modelo=" + modelo + ", marca=" + marca + ", descripcion=" + descripcion + '}';
     }
     
     
