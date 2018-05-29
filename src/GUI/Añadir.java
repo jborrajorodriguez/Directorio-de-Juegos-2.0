@@ -6,6 +6,7 @@
 package GUI;
 
 import BaseDeDatos.FuncionesBase;
+import directoriodejuegos2.pkg0.Juego;
 import directoriodejuegos2.pkg0.Plataforma;
 
 /**
@@ -214,9 +215,11 @@ public class Añadir extends javax.swing.JFrame {
                cod=cod;
            }
         }
+        FuncionesBase.selectAllJuego();
+        int num=Juego.juegos.size();
         boolean terminado=jCheckBoxAcabado.isSelected();
         
-        FuncionesBase.insertJuego(5, cod, 
+        FuncionesBase.insertJuego((num+1), cod, 
                 Tnombre.getText(),
                 jCTipo.getItemAt(jCTipo.getSelectedIndex()),
                 Integer.parseInt(jTextFieldNumeroDeJugadores.getText()),

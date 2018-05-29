@@ -302,9 +302,9 @@ public class FuncionesBase{
             pstmt.setString(4, marca);
             pstmt.setString(5, descripcion);
             pstmt.executeUpdate();
-            IO.Mensaje("Introducción Realizada");
+            IO.sout("Introducción Realizada");
         }catch(SQLException e){
-            IO.Mensaje("Fallo al introducir datos");
+            IO.sout("Fallo al introducir datos");
             System.out.println(e.getMessage());
         }
     }

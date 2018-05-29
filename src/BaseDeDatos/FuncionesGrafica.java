@@ -10,6 +10,8 @@ import javax.swing.table.DefaultTableModel;
 public class FuncionesGrafica {
     
     public static boolean rellenarTabla(DefaultTableModel tab){
+        FuncionesBase.selectAllPlataforma();
+        FuncionesBase.selectAllJuego();
         boolean control=false;
         for(int i=0; i<tab.getRowCount(); i++){
             tab.removeRow(i);
