@@ -5,12 +5,15 @@
  */
 package GUI;
 
+import BaseDeDatos.FuncionesGrafica;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Clase
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
-
+    DefaultTableModel tab;
     /**
      * Creates new form VentanaPrincipal
      */
@@ -19,6 +22,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.setVisible(true);
         this.setTitle("Directorio de Juegos");
         this.setLocationRelativeTo(null);
+        tab=(DefaultTableModel) jTable1.getModel();
+        FuncionesGrafica.rellenarTabla(tab);
     }
 
     /**
@@ -96,7 +101,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Bborrar.setContentAreaFilled(false);
         Bborrar.setFocusPainted(false);
         Bborrar.setFocusable(false);
-        Bborrar.setRolloverSelectedIcon(new javax.swing.ImageIcon("C:\\Users\\Clase\\Desktop\\Imagenes de interes\\borrar.png")); // NOI18N
         Bborrar.setVerifyInputWhenFocusTarget(false);
         Bborrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
