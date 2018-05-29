@@ -111,11 +111,12 @@ public class FuncionesBase{
         }
     }
 
-    public static void updateAllPlataforma(int cod, String nombre, String modelo, String marca){
+    public static void updateAllPlataforma(int cod, String nombre, String modelo, String marca, String descripcion){
         String sql="UPDATE plataforma SET nombre = ? , "
                 +"modelo = ? , "
                 +"marca = ? , "
-                +"WHERE codigo = ?";
+                +"descripcion = ? , "
+                +"WHERE codp = ?";
 
         try(Connection conn=FuncionesBase.connect();
                 PreparedStatement pstmt=conn.prepareStatement(sql)){
@@ -124,7 +125,8 @@ public class FuncionesBase{
             pstmt.setString(1, nombre);
             pstmt.setString(2, modelo);
             pstmt.setString(3, marca);
-            pstmt.setInt(4, cod);
+            pstmt.setString(4, descripcion);
+            pstmt.setInt(5, cod);
             // update 
             pstmt.executeUpdate();
             IO.Mensaje("Actualización realizada");
@@ -179,7 +181,7 @@ public class FuncionesBase{
     }
 
     public static void selectAllPlataforma(){
-        String sql="SELECT codigo, nombre, marca, modelo, precio FROM ordenadores";
+        String sql="SELECT codp, nombre, modelo, marca, descripcion FROM plataforma";
         Plataforma.plataformas.clear();
         try(Connection conn=FuncionesBase.connect();
                 Statement stmt=conn.createStatement();
@@ -187,7 +189,7 @@ public class FuncionesBase{
 
             // loop through the result set
             while(rs.next()){
-                IO.sout(rs.getInt("codigo")+"\t"
+                IO.sout(rs.getInt("codp")+"\t"
                         +rs.getString("nombre")+"\t"
                         +rs.getString("modelo")+"\t"
                         +rs.getString("marca")+"\t"
@@ -206,7 +208,7 @@ public class FuncionesBase{
     }
 
     public static void selectAllJuego(){
-        String sql="SELECT codigo, plataforma, nombre, tipo, njug, terminado, precio FROM juego";
+        String sql="SELECT codj, codp, nombre, tipo, njug, terminado FROM juego";
         Juego.juegos.clear();
         try(Connection conn=FuncionesBase.connect();
                 Statement stmt=conn.createStatement();
@@ -214,8 +216,8 @@ public class FuncionesBase{
 
             // loop through the result set
             while(rs.next()){
-                IO.sout(rs.getInt("codigo")+"\t"
-                        +rs.getInt("plataforma")+"\t"
+                IO.sout(rs.getInt("codj")+"\t"
+                        +rs.getInt("codp")+"\t"
                         +rs.getString("nombre")+"\t"
                         +rs.getString("tipo")+"\t"
                         +rs.getInt("njug")+"\t"
@@ -235,8 +237,8 @@ public class FuncionesBase{
     }
 
     public static String selectCodPlataforma(int cod){
-        String sql="SELECT codigo, nombre, modelo, marca, descripcion "
-                +"FROM plataformas WHERE codigo = ?";
+        String sql="SELECT codp, nombre, modelo, marca, descripcion "
+                +"FROM plataforma WHERE codigo = ?";
         String st="";
         try(Connection conn=FuncionesBase.connect();
                 PreparedStatement pstmt=conn.prepareStatement(sql)){
@@ -308,7 +310,7 @@ public class FuncionesBase{
     }
 
     public static void insertJuego(int cod, int plataforma, String nombre, String tipo, int njug, boolean terminado){
-        String sql="INSERT INTO plataforma(codigo ,plataforma, nombre, tipo, njug, terminado) VALUES(?,?,?,?,?)";
+        String sql="INSERT INTO juego(codj ,codp, nombre, tipo, njug, terminado) VALUES(?,?,?,?,?,?)";
 
         try(Connection conn=FuncionesBase.connect();
                 PreparedStatement pstmt=conn.prepareStatement(sql)){

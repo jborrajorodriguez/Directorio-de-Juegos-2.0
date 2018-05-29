@@ -209,11 +209,12 @@ public class Añadir extends javax.swing.JFrame {
         for(int i=0; i<Plataforma.plataformas.size(); i++){
            if(plataforma==Plataforma.plataformas.get(i).getNombre()){
                cod=Plataforma.plataformas.get(i).getCodP();
+               System.out.println(cod);
            } 
         }
         boolean terminado=jCheckBoxAcabado.isSelected();
         
-        FuncionesBase.insertJuego(1, cod, 
+        FuncionesBase.insertJuego(8, cod, 
                 Tnombre.getText(),
                 jCTipo.getItemAt(jCTipo.getSelectedIndex()),
                 Integer.parseInt(jTextFieldNumeroDeJugadores.getText()),
