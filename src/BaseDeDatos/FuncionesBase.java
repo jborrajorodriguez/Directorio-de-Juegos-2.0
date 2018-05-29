@@ -164,7 +164,7 @@ public class FuncionesBase{
     }
 
     public static void updateFieldJuego(String campo, String dato, int cod){
-        String sql="UPDATE ordenadores SET '"+campo+"' = ? WHERE codigo = ? ";
+        String sql="UPDATE juego SET '"+campo+"' = ? WHERE codigo = ? ";
 
         try(Connection conn=FuncionesBase.connect();
                 PreparedStatement pstmt=conn.prepareStatement(sql)){
@@ -196,7 +196,7 @@ public class FuncionesBase{
                         +rs.getString("descripcion"));
 
                 Plataforma.plataformas.add(new Plataforma(
-                        rs.getInt("codigo"),
+                        rs.getInt("codp"),
                         rs.getString("nombre"),
                         rs.getString("modelo"),
                         rs.getString("marca"),
@@ -224,8 +224,8 @@ public class FuncionesBase{
                         +rs.getBoolean("terminado"));
 
                 Juego.juegos.add(new Juego(
-                        rs.getInt("codigo"),
-                        rs.getInt("plataforma"),
+                        rs.getInt("codj"),
+                        rs.getInt("codp"),
                         rs.getString("nombre"),
                         rs.getString("tipo"),
                         rs.getInt("njug"),
@@ -264,7 +264,7 @@ public class FuncionesBase{
     }
 
     public static String selectCodJuego(int cod){
-        String sql="SELECT codigo, plataforma, nombre, tipo, njug, terminado "
+        String sql="SELECT codj, codp, nombre, tipo, njug, terminado "
                 +"FROM juego WHERE codigo = ?";
         String st="";
         try(Connection conn=FuncionesBase.connect();
@@ -277,8 +277,8 @@ public class FuncionesBase{
 
             // loop through the result set
             while(rs.next()){
-                st=(rs.getInt("codigo")+"\t"
-                        +rs.getInt("plataforma")+"\t"
+                st=(rs.getInt("codj")+"\t"
+                        +rs.getInt("codp")+"\t"
                         +rs.getString("nombre")+"\t"
                         +rs.getString("tipo")+"\t"
                         +rs.getInt("njug")+"\t"

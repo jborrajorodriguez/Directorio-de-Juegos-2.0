@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import BaseDeDatos.FuncionesBase;
 import BaseDeDatos.FuncionesGrafica;
 import javax.swing.table.DefaultTableModel;
 
@@ -13,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Clase
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
-    DefaultTableModel tab;
+     static DefaultTableModel tab;
     /**
      * Creates new form VentanaPrincipal
      */
@@ -24,6 +25,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         tab=(DefaultTableModel) jTable1.getModel();
         FuncionesGrafica.rellenarTabla(tab);
+        FuncionesBase.selectAllPlataforma();
+        FuncionesBase.selectAllJuego();
     }
 
     /**

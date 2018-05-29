@@ -214,7 +214,7 @@ public class Añadir extends javax.swing.JFrame {
         }
         boolean terminado=jCheckBoxAcabado.isSelected();
         
-        FuncionesBase.insertJuego(8, cod, 
+        FuncionesBase.insertJuego(1, cod, 
                 Tnombre.getText(),
                 jCTipo.getItemAt(jCTipo.getSelectedIndex()),
                 Integer.parseInt(jTextFieldNumeroDeJugadores.getText()),
