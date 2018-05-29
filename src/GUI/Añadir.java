@@ -86,7 +86,7 @@ public class Añadir extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Número de jugadores");
 
-        bAñadir.setIcon(new javax.swing.ImageIcon("C:\\Users\\Clase\\Desktop\\Imagenes de interes\\borrar.png")); // NOI18N
+        bAñadir.setIcon(new javax.swing.ImageIcon("C:\\Users\\Clase\\Desktop\\Imagenes de interes\\añadir2.png")); // NOI18N
         bAñadir.setBorder(null);
         bAñadir.setBorderPainted(false);
         bAñadir.setContentAreaFilled(false);
