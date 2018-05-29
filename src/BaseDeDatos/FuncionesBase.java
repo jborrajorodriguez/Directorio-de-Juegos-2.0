@@ -73,7 +73,8 @@ public class FuncionesBase{
                 +"	codp integer PRIMARY KEY,\n"
                 +"	nombre text NOT NULL,\n"
                 +"	modelo text,\n"
-                +"      maca text \n"
+                +"      marca text, \n"
+                +"      descripcion text \n"
                 +");";
 
         try(Connection conn=DriverManager.getConnection(url);
@@ -89,13 +90,14 @@ public class FuncionesBase{
 
     public static void createNewTableJuego(){
         // SQL statement for creating a new table
-        String sql="CREATE TABLE IF NOT EXISTS Juego (\n"
+        String sql="CREATE TABLE IF NOT EXISTS juego (\n"
                 +"	codj integer PRIMARY KEY,\n"
-                +"      FOREIGN KEY(codp) REFERENCES plataforma(codp),\n"
+                +"      codp integer, \n"
                 +"	nombre text NOT NULL,\n"
                 +"	tipo text,\n"
                 +"      njug int, \n"
-                +"      terminado boolean \n"
+                +"      terminado boolean, \n"
+                +"      FOREIGN KEY (codp) REFERENCES plataforma (codp) \n"
                 +");";
 
         try(Connection conn=DriverManager.getConnection(url);
@@ -288,7 +290,7 @@ public class FuncionesBase{
     }
 
     public static void insertPlataforma(int cod, String nombre, String modelo, String marca, String descripcion){
-        String sql="INSERT INTO plataforma(codigo ,nombre, marca, modelo, precio) VALUES(?,?,?,?,?)";
+        String sql="INSERT INTO plataforma(codp ,nombre, modelo, marca, descripcion) VALUES(?,?,?,?,?)";
 
         try(Connection conn=FuncionesBase.connect();
                 PreparedStatement pstmt=conn.prepareStatement(sql)){

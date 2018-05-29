@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import BaseDeDatos.FuncionesBase;
+import directoriodejuegos2.pkg0.Plataforma;
+
 /**
  *
  * @author Clase
@@ -86,10 +89,15 @@ public class Añadir extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Número de jugadores");
 
-        bAñadir.setIcon(new javax.swing.ImageIcon("C:\\Users\\Clase\\Desktop\\Imagenes de interes\\añadir2.png")); // NOI18N
+        bAñadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/añadir2.png"))); // NOI18N
         bAñadir.setBorder(null);
         bAñadir.setBorderPainted(false);
         bAñadir.setContentAreaFilled(false);
+        bAñadir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAñadirActionPerformed(evt);
+            }
+        });
 
         bLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/quitar.png"))); // NOI18N
         bLimpiar.setBorder(null);
@@ -100,8 +108,6 @@ public class Añadir extends javax.swing.JFrame {
                 bLimpiarActionPerformed(evt);
             }
         });
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("E:\\añadir.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -196,6 +202,23 @@ public class Añadir extends javax.swing.JFrame {
         jTextFieldNumeroDeJugadores.setText("");
         Tnombre.setText("");
     }//GEN-LAST:event_bLimpiarActionPerformed
+
+    private void bAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAñadirActionPerformed
+        String plataforma=jComboBox1.getItemAt(jComboBox1.getSelectedIndex());
+        int cod=0;
+        for(int i=0; i<Plataforma.plataformas.size(); i++){
+           if(plataforma==Plataforma.plataformas.get(i).getNombre()){
+               cod=Plataforma.plataformas.get(i).getCodP();
+           } 
+        }
+        boolean terminado=jCheckBoxAcabado.isSelected();
+        
+        FuncionesBase.insertJuego(1, cod, 
+                Tnombre.getText(),
+                jCTipo.getItemAt(jCTipo.getSelectedIndex()),
+                Integer.parseInt(jTextFieldNumeroDeJugadores.getText()),
+                terminado);
+    }//GEN-LAST:event_bAñadirActionPerformed
 
     /**
      * @param args the command line arguments
