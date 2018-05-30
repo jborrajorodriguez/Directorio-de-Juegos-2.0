@@ -8,7 +8,7 @@ package GUI;
 import BaseDeDatos.FuncionesBase;
 import BaseDeDatos.FuncionesGrafica;
 import directoriodejuegos2.pkg0.Juego;
-import javax.swing.JOptionPane;
+
 
 import javax.swing.table.DefaultTableModel;
 
