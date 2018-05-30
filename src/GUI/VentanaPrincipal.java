@@ -45,7 +45,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1024, 768));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
@@ -59,14 +58,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Plataforma", "Tipo", "Multijugador", "Acabado"
+                "Nombre", "Plataforma", "Tipo", "Nº Jugadores", "Acabado"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -114,6 +113,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Bbuscar.setBorderPainted(false);
         Bbuscar.setContentAreaFilled(false);
         Bbuscar.setFocusPainted(false);
+        Bbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BbuscarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Logo.png"))); // NOI18N
 
@@ -174,6 +178,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void BañadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BañadirActionPerformed
         Añadir vAñadir=new Añadir();
     }//GEN-LAST:event_BañadirActionPerformed
+
+    private void BbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BbuscarActionPerformed
+        Buscar vBuscar=new Buscar();
+    }//GEN-LAST:event_BbuscarActionPerformed
 
     /**
      * @param args the command line arguments
