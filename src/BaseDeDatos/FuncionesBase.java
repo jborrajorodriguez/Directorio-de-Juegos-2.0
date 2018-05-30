@@ -346,7 +346,7 @@ public class FuncionesBase{
     }
 
     public static void delete(String tabla, int cod){
-        String sql="DELETE FROM '"+tabla+"' WHERE codigo = ?";
+        String sql="DELETE FROM '"+tabla+"' WHERE codj = ?";
 
         try(Connection conn=FuncionesBase.connect();
                 PreparedStatement pstmt=conn.prepareStatement(sql)){

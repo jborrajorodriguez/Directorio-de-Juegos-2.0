@@ -1,6 +1,9 @@
 package BaseDeDatos;
 
 import directoriodejuegos2.pkg0.Juego;
+import java.sql.SQLException;
+import javax.swing.JTable;
+import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -30,4 +33,25 @@ public class FuncionesGrafica {
         }
         return control;
     }
+     public static boolean rellenarTabla2(DefaultTableModel tab){
+        FuncionesBase.selectAllPlataforma();
+        FuncionesBase.selectAllJuego();
+        boolean control=false;
+        for(int i=0; i<tab.getRowCount(); i++){
+            tab.removeRow(i);
+            tab.setRowCount(0);
+        }
+        FuncionesBase.selectAllJuego();
+        Object ob[]=null;
+        for(int i=0; i<Juego.juegos.size(); i++){
+            tab.addRow(ob);
+            tab.setValueAt(Juego.juegos.get(i).getNome(), i, 0);
+            tab.setValueAt(Juego.juegos.get(i).getCodp(), i, 1);
+            control=true;
+        }
+        return control;
+    }
+   
+         
+     
 }
