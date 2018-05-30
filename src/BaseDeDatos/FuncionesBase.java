@@ -329,7 +329,7 @@ public class FuncionesBase{
     }
 
     public static void updateField(String tabla, String campo, String dato, int cod){
-        String sql="UPDATE '"+tabla+"' SET '"+campo+"' = ? WHERE codigo = ? ";
+        String sql="UPDATE '"+tabla+"' SET '"+campo+"' = ? WHERE codj = ? ";
 
         try(Connection conn=FuncionesBase.connect();
                 PreparedStatement pstmt=conn.prepareStatement(sql)){
@@ -347,14 +347,12 @@ public class FuncionesBase{
 
     public static void delete(String tabla, int cod){
         String field="";
-        String sql="DELETE FROM '"+tabla+"' WHERE '"+field+"' = ?";
-        
         if(tabla.equalsIgnoreCase("juego")){
             field="codj";
         }else{
             field="codp";
         }
-
+        String sql="DELETE FROM '"+tabla+"' WHERE "+field+" = ?";
         try(Connection conn=FuncionesBase.connect();
                 PreparedStatement pstmt=conn.prepareStatement(sql)){
 
