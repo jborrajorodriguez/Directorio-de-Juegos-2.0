@@ -229,6 +229,8 @@ public class Añadir extends javax.swing.JFrame{
                 Integer.parseInt(jTextFieldNumeroDeJugadores.getText()),
                 terminado);
         FuncionesGrafica.rellenarTabla(VentanaPrincipal.tab);
+        jTextFieldNumeroDeJugadores.setText("");
+        Tnombre.setText("");
     }//GEN-LAST:event_bAñadirActionPerformed
 
     /**
