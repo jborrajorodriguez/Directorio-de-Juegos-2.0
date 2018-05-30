@@ -250,7 +250,7 @@ public class FuncionesBase{
 
             // loop through the result set
             while(rs.next()){
-                st=(rs.getInt("codigo")+"\t"
+                st=(rs.getInt("codp")+"\t"
                         +rs.getString("nombre")+"\t"
                         +rs.getString("modelo")+"\t"
                         +rs.getString("marca")+"\t"
@@ -346,7 +346,14 @@ public class FuncionesBase{
     }
 
     public static void delete(String tabla, int cod){
-        String sql="DELETE FROM '"+tabla+"' WHERE codj = ?";
+        String field="";
+        String sql="DELETE FROM '"+tabla+"' WHERE '"+field+"' = ?";
+        
+        if(tabla.equalsIgnoreCase("juego")){
+            field="codj";
+        }else{
+            field="codp";
+        }
 
         try(Connection conn=FuncionesBase.connect();
                 PreparedStatement pstmt=conn.prepareStatement(sql)){

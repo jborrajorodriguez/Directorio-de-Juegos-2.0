@@ -1,11 +1,12 @@
 package directoriodejuegos2.pkg0;
 
+import BaseDeDatos.FuncionesBase;
 import java.util.ArrayList;
 
 /**
  * @author {Juan Borrajo Rodriguez}
  */
-public class Juego {
+public class Juego{
 
     private int codj;
     private int codp;
@@ -82,7 +83,27 @@ public class Juego {
     public void setJuegos(ArrayList<Juego> juegos){
         this.juegos=juegos;
     }
-    
-    
+
+    @Override
+    public String toString(){
+        String term="";
+        if(terminado){
+            term="Terminado";
+        }else{
+            term="Sin Terminar";
+        }
+        String plataf="";
+        FuncionesBase.selectAllPlataforma();
+        for(int i=0; i<Plataforma.plataformas.size(); i++){
+            if(Plataforma.plataformas.get(i).getCodP()==codp){
+                plataf=Plataforma.plataformas.get(i).getNombre();
+            }
+        }
+        return ("Nombre: "+nome+"\n"
+                +"Plataforma: "+plataf+"\n"
+                +"Tipo: "+tipo+"\n"
+                +"Numero de jugadores: "+njug+"\n"
+                +"Terminado: "+term+"\n\n");
+    }
 
 }
