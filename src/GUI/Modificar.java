@@ -253,6 +253,7 @@ public class Modificar extends javax.swing.JFrame {
                     }
                     
                     FuncionesBase.updateFieldJuego("terminado",term,codj);
+                    FuncionesBase.selectAllJuego();
                     FuncionesGrafica.rellenarTabla(VentanaPrincipal.tab);
                     jTextArea1.setText(Juego.juegos.get(codj-1).toString());
                     
@@ -273,6 +274,7 @@ public class Modificar extends javax.swing.JFrame {
                     }
                     FuncionesBase.updateFieldJuego("codp",codp2, codj);
                     FuncionesGrafica.rellenarTabla(VentanaPrincipal.tab);
+                    
                     jTextArea1.setText(Juego.juegos.get(codj-1).toString());
                     
                     
@@ -294,6 +296,7 @@ public class Modificar extends javax.swing.JFrame {
             jComboBox3.setVisible(true);
             jTextField2.setVisible(false);
             jComboBox6.setVisible(false);
+            jComboBox5.setVisible(false);
         }
         else if(cambio.equalsIgnoreCase("Plataforma")){
             jComboBox6.setVisible(true);
