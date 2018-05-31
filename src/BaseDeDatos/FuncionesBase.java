@@ -164,12 +164,20 @@ public class FuncionesBase{
     }
 
     public static void updateFieldJuego(String campo, String dato, int cod){
-        String sql="UPDATE juego SET '"+campo+"' = ? WHERE codigo = ? ";
-
+        String sql="UPDATE juego SET "+campo+" = ? WHERE codj = ? ";
+        
         try(Connection conn=FuncionesBase.connect();
                 PreparedStatement pstmt=conn.prepareStatement(sql)){
             // set the corresponding param
-            pstmt.setString(1, dato);
+            if(campo.equalsIgnoreCase("njug")){
+                int valor=Integer.parseInt(dato);
+                pstmt.setInt(1, valor);
+            }else if(campo.equalsIgnoreCase("terminado")){
+                boolean valor=Boolean.parseBoolean(dato);
+                pstmt.setBoolean(1, valor);
+            }else{
+                pstmt.setString(1, dato);
+            }
             pstmt.setInt(2, cod);
             //update
             pstmt.executeUpdate();
@@ -335,7 +343,7 @@ public class FuncionesBase{
         }else{
             code="codp";
         }
-        String sql="UPDATE '"+tabla+"' SET '"+campo+"' = ? WHERE "+code+" = ? ";
+        String sql="UPDATE "+tabla+" SET "+campo+" = ? WHERE "+code+" = ? ";
 
         try(Connection conn=FuncionesBase.connect();
                 PreparedStatement pstmt=conn.prepareStatement(sql)){
