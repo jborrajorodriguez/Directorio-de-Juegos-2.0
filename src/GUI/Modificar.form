@@ -254,14 +254,26 @@
         <Component class="javax.swing.JComboBox" name="jComboBox3">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
+              <StringArray count="13">
                 <StringItem index="0" value="FPS"/>
                 <StringItem index="1" value="Carreras"/>
                 <StringItem index="2" value="Deportes"/>
                 <StringItem index="3" value="RPG"/>
+                <StringItem index="4" value="Lucha"/>
+                <StringItem index="5" value="Arcade"/>
+                <StringItem index="6" value="Plataformas"/>
+                <StringItem index="7" value="Shooter"/>
+                <StringItem index="8" value="Estrategia"/>
+                <StringItem index="9" value="Simulacion"/>
+                <StringItem index="10" value="Aventura"/>
+                <StringItem index="11" value="Survival"/>
+                <StringItem index="12" value="SandBox"/>
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox3ActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>

@@ -68,7 +68,12 @@ public class Añadir extends javax.swing.JFrame{
             }
         });
 
-        jCTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FPS", "Carreras", "Deportes", "RPG" }));
+        jCTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FPS", "Carreras", "Deportes", "RPG", "Lucha", "Arcade", "Plataformas", "Shooter", "Estrategia", "Simulacion", "Aventura", "Survival", "SandBox" }));
+        jCTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCTipoActionPerformed(evt);
+            }
+        });
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombre del juego");
@@ -234,6 +239,10 @@ public class Añadir extends javax.swing.JFrame{
         jTextFieldNumeroDeJugadores.setText("");
         Tnombre.setText("");
     }//GEN-LAST:event_bAñadirActionPerformed
+
+    private void jCTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCTipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCTipoActionPerformed
 
     /**
      * @param args the command line arguments

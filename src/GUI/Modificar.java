@@ -112,7 +112,12 @@ public class Modificar extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nombre :");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FPS", "Carreras", "Deportes", "RPG" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FPS", "Carreras", "Deportes", "RPG", "Lucha", "Arcade", "Plataformas", "Shooter", "Estrategia", "Simulacion", "Aventura", "Survival", "SandBox" }));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
 
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Xbox", "PlayStation", "PC" }));
         jComboBox6.addActionListener(new java.awt.event.ActionListener() {
@@ -317,6 +322,10 @@ public class Modificar extends javax.swing.JFrame {
     private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox6ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox3ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -82,7 +82,7 @@ public class Buscar extends javax.swing.JFrame {
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FPS", "Carreras", "Deportes", "RPG" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FPS", "Carreras", "Deportes", "RPG", "Lucha", "Arcade", "Plataformas", "Shooter", "Estrategia", "Simulacion", "Aventura", "Survival", "SandBox" }));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/busqueda2.png"))); // NOI18N
 
@@ -157,7 +157,12 @@ public class Buscar extends javax.swing.JFrame {
             jComboBox2.setVisible(false);
             jComboBox3.setVisible(true);
             
+            
         }
+        else if(combo.equalsIgnoreCase("Plataformas")){
+            jTextField1.setVisible(false);
+            jComboBox2.setVisible(false);
+            jComboBox3.setVisible(false);}
         else{
             jTextField1.setVisible(true);
             jComboBox2.setVisible(false);
