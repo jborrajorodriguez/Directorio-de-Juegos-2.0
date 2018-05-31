@@ -8,6 +8,7 @@ package GUI;
 import BaseDeDatos.FuncionesBase;
 import BaseDeDatos.FuncionesGrafica;
 import directoriodejuegos2.pkg0.Juego;
+import javax.swing.JOptionPane;
 
 
 import javax.swing.table.DefaultTableModel;
@@ -139,6 +140,7 @@ public class Borrar extends javax.swing.JFrame {
     private void bBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarActionPerformed
       
         int pos=jTable1.getSelectedRow();
+    
         int cod=Juego.juegos.get(pos).getCodj();
         FuncionesBase.delete("juego", cod);
         jTable1.clearSelection();

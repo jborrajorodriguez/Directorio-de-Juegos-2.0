@@ -43,6 +43,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Bborrar = new javax.swing.JButton();
         Bbuscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -121,12 +122,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Logo.png"))); // NOI18N
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(36, 36, 36)
                 .addComponent(Bañadir)
                 .addGap(18, 18, 18)
                 .addComponent(Bborrar)
@@ -153,7 +163,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Bañadir)
                     .addComponent(Bborrar)
-                    .addComponent(Bbuscar))
+                    .addComponent(Bbuscar)
+                    .addComponent(jButton1))
                 .addGap(31, 31, 31))
         );
 
@@ -182,6 +193,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void BbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BbuscarActionPerformed
         Buscar vBuscar=new Buscar();
     }//GEN-LAST:event_BbuscarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       Modificar vModificar=new Modificar();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,6 +237,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton Bañadir;
     private javax.swing.JButton Bborrar;
     private javax.swing.JButton Bbuscar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
