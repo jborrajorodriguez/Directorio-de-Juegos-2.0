@@ -9,7 +9,7 @@ import BaseDeDatos.FuncionesBase;
 import BaseDeDatos.FuncionesGrafica;
 import directoriodejuegos2.pkg0.Juego;
 import directoriodejuegos2.pkg0.Plataforma;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -26,8 +26,7 @@ public class Modificar extends javax.swing.JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         jComboBox5.setVisible(false);
-         jComboBox6.setVisible(false);
-        
+        jComboBox6.setVisible(false);
         jComboBox3.setVisible(false);
     }
 
@@ -205,112 +204,103 @@ public class Modificar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String cambio=(String) jComboBox2.getSelectedItem();
-        String resultado="";
-            
-                String nombre=jTextField1.getText();
-                String plataforma=(String) jComboBox4.getSelectedItem();
-                int codp=0;
-                int codj=0;
-                
-                for (int i = 0; i < Plataforma.plataformas.size(); i++) {
-                    if(plataforma.equalsIgnoreCase(Plataforma.plataformas.get(i).getNombre())){
-                        codp=Plataforma.plataformas.get(i).getCodP();
-                    }
-                    for (int j = 0; j < Juego.juegos.size(); j++){
-                    if(nombre.equalsIgnoreCase(Juego.juegos.get(j).getNome())&&Juego.juegos.get(j).getCodp()==codp){
-                    codj=Juego.juegos.get(j).getCodj();
-                    
-                    resultado=Juego.juegos.get(j).toString();
-                    
-                    }
-                   
-                   
+        String cambio = (String) jComboBox2.getSelectedItem();
+        String resultado = "";
+
+        String nombre = jTextField1.getText();
+        String plataforma = (String) jComboBox4.getSelectedItem();
+        int codp = 0;
+        int codj = 0;
+
+        for (int i = 0; i < Plataforma.plataformas.size(); i++) {
+            if (plataforma.equalsIgnoreCase(Plataforma.plataformas.get(i).getNombre())) {
+                codp = Plataforma.plataformas.get(i).getCodP();
+            }
+            for (int j = 0; j < Juego.juegos.size(); j++) {
+                if (nombre.equalsIgnoreCase(Juego.juegos.get(j).getNome()) && Juego.juegos.get(j).getCodp() == codp) {
+                    codj = Juego.juegos.get(j).getCodj();
+
+                    resultado = Juego.juegos.get(j).toString();
+
                 }
-                }jTextArea1.setText(resultado);
-                
-                if(cambio.equalsIgnoreCase("nombre")){
-                   
-                    FuncionesBase.updateFieldJuego("nombre",jTextField2.getText(),codj);
-                    FuncionesGrafica.rellenarTabla(VentanaPrincipal.tab);
-                    jTextArea1.setText(Juego.juegos.get(codj-1).toString());
-                    
-                
-                
-                }else if(cambio.equalsIgnoreCase("Tipo")){
-                    String tipo=(String) jComboBox3.getSelectedItem();
-                    FuncionesBase.updateFieldJuego("tipo",tipo,codj);
-                    FuncionesGrafica.rellenarTabla(VentanaPrincipal.tab);
-                    jTextArea1.setText(Juego.juegos.get(codj-1).toString());
-                    
-                }else if(cambio.equalsIgnoreCase("Terminado")){
-                    String ter=(String) jComboBox5.getSelectedItem();
-                    String term="false";
-                    if(ter.equalsIgnoreCase("si")){
-                        term="true";
-                    }else if(ter.equalsIgnoreCase("no")){
-                        term="false";
-                    }
-                    
-                    FuncionesBase.updateFieldJuego("terminado",term,codj);
-                    FuncionesBase.selectAllJuego();
-                    FuncionesGrafica.rellenarTabla(VentanaPrincipal.tab);
-                    jTextArea1.setText(Juego.juegos.get(codj-1).toString());
-                    
-                }else if(cambio.equalsIgnoreCase("NºJugadores")){
-                    FuncionesBase.updateFieldJuego("njug",jTextField2.getText(),codj);
-                    FuncionesGrafica.rellenarTabla(VentanaPrincipal.tab);
-                    jTextArea1.setText(Juego.juegos.get(codj-1).toString());
-                    
-                }else if(cambio.equalsIgnoreCase("Plataforma")){
-                    String name=(String) jComboBox6.getSelectedItem();
-                    String codp2="";
-                    for (int i = 0; i < Plataforma.plataformas.size(); i++) {
-                        if(name.equalsIgnoreCase(Plataforma.plataformas.get(i).getNombre())){
-                            codp2=String.valueOf(Plataforma.plataformas.get(i).getCodP());
-                        }
-                        
-                        
-                    }
-                    FuncionesBase.updateFieldJuego("codp",codp2, codj);
-                    FuncionesGrafica.rellenarTabla(VentanaPrincipal.tab);
-                    
-                    jTextArea1.setText(Juego.juegos.get(codj-1).toString());
-                    
-                    
-                    
+
+            }
+        }
+        jTextArea1.setText(resultado);
+
+        if (cambio.equalsIgnoreCase("nombre")) {
+
+            FuncionesBase.updateFieldJuego("nombre", jTextField2.getText(), codj);
+            FuncionesGrafica.rellenarTabla(VentanaPrincipal.tab);
+            jTextArea1.setText(Juego.juegos.get(codj - 1).toString());
+
+        } else if (cambio.equalsIgnoreCase("Tipo")) {
+            String tipo = (String) jComboBox3.getSelectedItem();
+            FuncionesBase.updateFieldJuego("tipo", tipo, codj);
+            FuncionesGrafica.rellenarTabla(VentanaPrincipal.tab);
+            jTextArea1.setText(Juego.juegos.get(codj - 1).toString());
+
+        } else if (cambio.equalsIgnoreCase("Terminado")) {
+            String ter = (String) jComboBox5.getSelectedItem();
+            String term = "false";
+            if (ter.equalsIgnoreCase("si")) {
+                term = "true";
+            } else if (ter.equalsIgnoreCase("no")) {
+                term = "false";
+            }
+
+            FuncionesBase.updateFieldJuego("terminado", term, codj);
+            FuncionesBase.selectAllJuego();
+            FuncionesGrafica.rellenarTabla(VentanaPrincipal.tab);
+            jTextArea1.setText(Juego.juegos.get(codj - 1).toString());
+
+        } else if (cambio.equalsIgnoreCase("NºJugadores")) {
+            FuncionesBase.updateFieldJuego("njug", jTextField2.getText(), codj);
+            FuncionesGrafica.rellenarTabla(VentanaPrincipal.tab);
+            jTextArea1.setText(Juego.juegos.get(codj - 1).toString());
+
+        } else if (cambio.equalsIgnoreCase("Plataforma")) {
+            String name = (String) jComboBox6.getSelectedItem();
+            String codp2 = "";
+            for (int i = 0; i < Plataforma.plataformas.size(); i++) {
+                if (name.equalsIgnoreCase(Plataforma.plataformas.get(i).getNombre())) {
+                    codp2 = String.valueOf(Plataforma.plataformas.get(i).getCodP());
                 }
-            
-            
-         
-        
+
+            }
+            FuncionesBase.updateFieldJuego("codp", codp2, codj);
+            FuncionesGrafica.rellenarTabla(VentanaPrincipal.tab);
+
+            jTextArea1.setText(Juego.juegos.get(codj - 1).toString());
+
+        }
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        String cambio=(String) jComboBox2.getSelectedItem();
-        if(cambio.equalsIgnoreCase("Tipo")){
+        String cambio = (String) jComboBox2.getSelectedItem();
+        if (cambio.equalsIgnoreCase("Tipo")) {
             jComboBox3.setVisible(true);
             jTextField2.setVisible(false);
             jComboBox6.setVisible(false);
             jComboBox5.setVisible(false);
-        }
-        else if(cambio.equalsIgnoreCase("Plataforma")){
+        } else if (cambio.equalsIgnoreCase("Plataforma")) {
             jComboBox6.setVisible(true);
             jComboBox3.setVisible(false);
             jTextField2.setVisible(false);
             jComboBox5.setVisible(false);
-            
-        }
-        else if(cambio.equalsIgnoreCase("Terminado")){
+
+        } else if (cambio.equalsIgnoreCase("Terminado")) {
             jComboBox3.setVisible(false);
             jTextField2.setVisible(false);
             jComboBox5.setVisible(true);
             jComboBox6.setVisible(false);
-        }else{
+        } else {
             jComboBox3.setVisible(false);
             jComboBox6.setVisible(false);
             jComboBox5.setVisible(false);
