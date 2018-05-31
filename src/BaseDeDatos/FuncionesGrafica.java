@@ -51,10 +51,16 @@ public class FuncionesGrafica{
         }
         FuncionesBase.selectAllJuego();
         Object ob[]=null;
+        String pla="";
         for(int i=0; i<Juego.juegos.size(); i++){
             tab.addRow(ob);
+            for(int j=0; j<Plataforma.plataformas.size(); j++){
+                if(Juego.juegos.get(i).getCodp()==Plataforma.plataformas.get(j).getCodP()){
+                    pla=Plataforma.plataformas.get(j).getNombre();
+                }
+            }
             tab.setValueAt(Juego.juegos.get(i).getNome(), i, 0);
-            tab.setValueAt(Juego.juegos.get(i).getCodp(), i, 1);
+            tab.setValueAt(pla, i, 1);
             control=true;
         }
         return control;
