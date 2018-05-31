@@ -12,7 +12,7 @@ public class Plataforma {
     private String modelo;
     private String marca;
     private String descripcion;
-    public static ArrayList<Plataforma> plataformas=new ArrayList();
+    public static ArrayList<Plataforma> plataformas = new ArrayList();
 
     public Plataforma() {
     }
@@ -67,12 +67,10 @@ public class Plataforma {
 
     @Override
     public String toString() {
-        return("Nombre: "+nombre+"\n"
-                + "Modelo: "+modelo+"\n"
-                + "Marca: "+marca+"\n"
-                + "Descripción: "+descripcion);
+        return ("Nombre: " + nombre + "\n"
+                + "Modelo: " + modelo + "\n"
+                + "Marca: " + marca + "\n"
+                + "Descripción: " + descripcion);
     }
-    
-    
 
 }

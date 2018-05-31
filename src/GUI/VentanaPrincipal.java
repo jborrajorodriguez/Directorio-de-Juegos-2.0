@@ -5,7 +5,7 @@
  */
 package GUI;
 
-import BaseDeDatos.FuncionesBase;
+
 import BaseDeDatos.FuncionesGrafica;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,7 +14,9 @@ import javax.swing.table.DefaultTableModel;
  * @author Clase
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
-     static DefaultTableModel tab;
+
+    static DefaultTableModel tab;
+
     /**
      * Creates new form VentanaPrincipal
      */
@@ -23,7 +25,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.setVisible(true);
         this.setTitle("Directorio de Juegos");
         this.setLocationRelativeTo(null);
-        tab=(DefaultTableModel) jTable1.getModel();
+        tab = (DefaultTableModel) jTable1.getModel();
         FuncionesGrafica.rellenarTabla(tab);
     }
 
@@ -192,19 +194,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BborrarActionPerformed
-        Borrar vBorrar=new Borrar();
+        Borrar vBorrar = new Borrar();
     }//GEN-LAST:event_BborrarActionPerformed
 
     private void BañadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BañadirActionPerformed
-        Añadir vAñadir=new Añadir();
+        Añadir vAñadir = new Añadir();
     }//GEN-LAST:event_BañadirActionPerformed
 
     private void BbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BbuscarActionPerformed
-        Buscar vBuscar=new Buscar();
+        Buscar vBuscar = new Buscar();
     }//GEN-LAST:event_BbuscarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       Modificar vModificar=new Modificar();
+        Modificar vModificar = new Modificar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
