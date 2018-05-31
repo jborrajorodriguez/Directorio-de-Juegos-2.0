@@ -67,7 +67,10 @@ public class Plataforma {
 
     @Override
     public String toString() {
-        return "Plataforma{" + "codP=" + codp + ", nombre=" + nombre + ", modelo=" + modelo + ", marca=" + marca + ", descripcion=" + descripcion + '}';
+        return("Nombre: "+nombre+"\n"
+                + "Modelo: "+modelo+"\n"
+                + "Marca: "+marca+"\n"
+                + "Descripción: "+descripcion);
     }
     
     
