@@ -7,6 +7,7 @@ package GUI;
 
 import BaseDeDatos.FuncionesBase;
 import directoriodejuegos2.pkg0.Juego;
+import directoriodejuegos2.pkg0.Plataforma;
 import javax.swing.JOptionPane;
 
 /**
@@ -46,8 +47,6 @@ public class Buscar extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(550, 700));
 
@@ -60,7 +59,7 @@ public class Buscar extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Tipo", "NºJugadores", "Terminado" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Tipo", "NºJugadores", "Terminado", "Plataformas" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -211,6 +210,11 @@ public class Buscar extends javax.swing.JFrame {
                     resultado=resultado+Juego.juegos.get(i).toString();
                     jTextArea1.setText(resultado);
             }
+                }}else if(combo.equalsIgnoreCase("Plataformas")){
+                    for (int i = 0; i < Plataforma.plataformas.size(); i++){
+                   
+                    resultado=resultado+Plataforma.plataformas.get(i).toString();
+                    jTextArea1.setText(resultado);
                 }}
             
             
