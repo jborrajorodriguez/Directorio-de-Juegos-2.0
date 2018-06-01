@@ -217,7 +217,7 @@ public class Modificar extends javax.swing.JFrame {
                 codp = Plataforma.plataformas.get(i).getCodP();
             }
             for (int j = 0; j < Juego.juegos.size(); j++) {
-                if (nombre.equalsIgnoreCase(Juego.juegos.get(j).getNome()) && Juego.juegos.get(j).getCodp() == codp) {
+                if (nombre.equalsIgnoreCase(Juego.juegos.get(j).getNombre()) && Juego.juegos.get(j).getCodp() == codp) {
                     codj = Juego.juegos.get(j).getCodj();
 
                     resultado = Juego.juegos.get(j).toString();
