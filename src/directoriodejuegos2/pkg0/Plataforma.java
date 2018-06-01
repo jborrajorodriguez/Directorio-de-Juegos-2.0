@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * @author {Juan Borrajo Rodriguez}
  */
-public class Plataforma {
+public class Plataforma extends SistemasDeEntretenimiento{
 
     private int codp;
     private String nombre;
@@ -33,10 +33,12 @@ public class Plataforma {
         this.codp = codp;
     }
 
+    @Override
     public String getNombre() {
         return nombre;
     }
 
+    @Override
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

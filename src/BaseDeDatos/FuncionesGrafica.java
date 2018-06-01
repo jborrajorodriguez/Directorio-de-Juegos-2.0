@@ -31,7 +31,7 @@ public class FuncionesGrafica{
                     pla=Plataforma.plataformas.get(j).getNombre();
                 }
             }
-            tab.setValueAt(Juego.juegos.get(i).getNome(), i, 0);
+            tab.setValueAt(Juego.juegos.get(i).getNombre(), i, 0);
             tab.setValueAt(pla, i, 1);
             tab.setValueAt(Juego.juegos.get(i).getTipo(), i, 2);
             tab.setValueAt(Juego.juegos.get(i).getnjug(), i, 3);
@@ -59,7 +59,7 @@ public class FuncionesGrafica{
                     pla=Plataforma.plataformas.get(j).getNombre();
                 }
             }
-            tab.setValueAt(Juego.juegos.get(i).getNome(), i, 0);
+            tab.setValueAt(Juego.juegos.get(i).getNombre(), i, 0);
             tab.setValueAt(pla, i, 1);
             control=true;
         }

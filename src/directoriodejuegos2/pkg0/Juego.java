@@ -6,11 +6,11 @@ import java.util.ArrayList;
 /**
  * @author {Juan Borrajo Rodriguez}
  */
-public class Juego {
+public class Juego extends SistemasDeEntretenimiento{
 
     private int codj;
     private int codp;
-    private String nome;
+    private String nombre;
     private String tipo;
     private int njug;
     private boolean terminado;
@@ -19,10 +19,10 @@ public class Juego {
     public Juego() {
     }
 
-    public Juego(int codj, int codp, String nome, String tipo, int nJugadores, boolean terminado) {
+    public Juego(int codj, int codp, String nombre, String tipo, int nJugadores, boolean terminado) {
         this.codj = codj;
         this.codp = codp;
-        this.nome = nome;
+        this.nombre = nombre;
         this.tipo = tipo;
         this.njug = nJugadores;
         this.terminado = terminado;
@@ -36,20 +36,24 @@ public class Juego {
         this.codj = codj;
     }
 
+    @Override
     public int getCodp() {
         return codp;
     }
 
+    @Override
     public void setCodp(int codp) {
         this.codp = codp;
     }
 
-    public String getNome() {
-        return nome;
+    @Override
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    @Override
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getTipo() {
@@ -99,7 +103,7 @@ public class Juego {
                 plataf = Plataforma.plataformas.get(i).getNombre();
             }
         }
-        return ("Nombre: " + nome + "\n"
+        return ("Nombre: " + nombre + "\n"
                 + "Plataforma: " + plataf + "\n"
                 + "Tipo: " + tipo + "\n"
                 + "Numero de jugadores: " + njug + "\n"
