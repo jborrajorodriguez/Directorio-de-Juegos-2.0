@@ -8,7 +8,6 @@ package GUI;
 import BaseDeDatos.FuncionesBase;
 import BaseDeDatos.FuncionesGrafica;
 import directoriodejuegos2.pkg0.Juego;
-import javax.swing.JOptionPane;
 
 
 import javax.swing.table.DefaultTableModel;
@@ -18,7 +17,9 @@ import javax.swing.table.DefaultTableModel;
  * @author Clase
  */
 public class Borrar extends javax.swing.JFrame {
+
     static DefaultTableModel tab2;
+
     /**
      * Creates new form Borrar
      */
@@ -27,7 +28,7 @@ public class Borrar extends javax.swing.JFrame {
         this.setTitle("Borrar un juego");
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        tab2=(DefaultTableModel) jTable1.getModel();
+        tab2 = (DefaultTableModel) jTable1.getModel();
         FuncionesGrafica.rellenarTabla2(tab2);
     }
 
@@ -138,10 +139,9 @@ public class Borrar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarActionPerformed
-      
-        int pos=jTable1.getSelectedRow();
-    
-        int cod=Juego.juegos.get(pos).getCodj();
+
+        int pos = jTable1.getSelectedRow();
+        int cod = Juego.juegos.get(pos).getCodj();
         FuncionesBase.delete("juego", cod);
         jTable1.clearSelection();
         FuncionesGrafica.rellenarTabla2(tab2);
@@ -149,14 +149,14 @@ public class Borrar extends javax.swing.JFrame {
     }//GEN-LAST:event_bBorrarActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        
+
     }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

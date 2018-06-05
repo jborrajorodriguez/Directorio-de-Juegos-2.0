@@ -5,14 +5,14 @@ import java.util.ArrayList;
 /**
  * @author {Juan Borrajo Rodriguez}
  */
-public class Plataforma {
+public class Plataforma extends SistemasDeEntretenimiento{
 
     private int codp;
     private String nombre;
     private String modelo;
     private String marca;
     private String descripcion;
-    public static ArrayList<Plataforma> plataformas=new ArrayList();
+    public static ArrayList<Plataforma> plataformas = new ArrayList();
 
     public Plataforma() {
     }
@@ -33,10 +33,12 @@ public class Plataforma {
         this.codp = codp;
     }
 
+    @Override
     public String getNombre() {
         return nombre;
     }
 
+    @Override
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -67,12 +69,10 @@ public class Plataforma {
 
     @Override
     public String toString() {
-        return("Nombre: "+nombre+"\n"
-                + "Modelo: "+modelo+"\n"
-                + "Marca: "+marca+"\n"
-                + "Descripción: "+descripcion);
+        return ("Nombre: " + nombre + "\n"
+                + "Modelo: " + modelo + "\n"
+                + "Marca: " + marca + "\n"
+                + "Descripción: " + descripcion);
     }
-    
-    
 
 }

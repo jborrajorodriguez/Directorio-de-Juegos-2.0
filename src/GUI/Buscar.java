@@ -178,7 +178,7 @@ public class Buscar extends javax.swing.JFrame {
             if(combo.equalsIgnoreCase("nombre")){
                 String nombre=jTextField1.getText();
                 for (int i = 0; i < Juego.juegos.size(); i++){
-                    if(nombre.equalsIgnoreCase(Juego.juegos.get(i).getNome())){
+                    if(nombre.equalsIgnoreCase(Juego.juegos.get(i).getNombre())){
                     resultado=resultado+Juego.juegos.get(i).toString();
                     jTextArea1.setText(resultado);
                     }
